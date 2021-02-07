@@ -1,9 +1,12 @@
 package com.ihrm.company.service;
 
 
+import com.ihrm.common.entity.ResultCode;
+import com.ihrm.common.handler.CommonException;
 import com.ihrm.common.utils.IdWorker;
 import com.ihrm.company.dao.ComPanyDao;
 import com.ihrm.domain.company.Company;
+import org.mozilla.javascript.EcmaError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +45,9 @@ public class CompanyService {
         return comPanyDao.findById(id).get();
     }
 
-    public List<Company> getCompanyList(){
+    public List<Company> getCompanyList() throws Exception {
+        //throw  new CommonException(ResultCode.UNAUTHENTICATED);
+
         List<Company> all = comPanyDao.findAll();
         return  all;
     }
