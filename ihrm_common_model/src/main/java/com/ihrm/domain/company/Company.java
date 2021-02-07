@@ -2,6 +2,7 @@ package com.ihrm.domain.company;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ import java.util.Date;
 @Data
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "co_company")
 public class Company implements Serializable {
     private static final long serialVersionUID = 594829320797158219L;
